@@ -17,7 +17,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream fis = new FileInputStream(
-					System.getProperty("user.dir") + "\\src\\test\\java\\com\\sausedemo\\config\\config.properties");
+					System.getProperty("user.dir") + "\\src\\test\\java\\com\\saucedemo\\config\\config.properties");
 			prop.load(fis);
 		} catch (IOException e) {
 			e.getMessage();

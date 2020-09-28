@@ -1,4 +1,4 @@
-package com.sausedemo.stepDefinations;
+package com.saucedemo.stepDefinations;
 
 import org.openqa.selenium.support.PageFactory;
 
