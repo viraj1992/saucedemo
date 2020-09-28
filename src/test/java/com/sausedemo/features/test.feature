@@ -1,3 +1,4 @@
+@regression
 Feature: Sause demo application test
 
   Scenario: login, sort, add products, checkout and finish purchase

@@ -2,7 +2,6 @@ package com.saucedemo.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import com.saucedemo.utils.TestBase;
 
@@ -10,36 +9,31 @@ public class CheckoutPage extends TestBase {
 
 	// Page Factory
 	@FindBy(id = "first-name")
-	private WebElement firstName;
+	static WebElement firstName;
 
 	@FindBy(id = "last-name")
-	private WebElement lastName;
+	static WebElement lastName;
 
 	@FindBy(id = "postal-code")
-	private WebElement postCode;
+	static WebElement postCode;
 
 	@FindBy(css = ".cart_button")
-	private WebElement finishBtn;
+	static WebElement finishBtn;
 
 	@FindBy(css = "[type='submit']")
-	private WebElement continueBtn;
+	static WebElement continueBtn;
 
-	// Initializing the Page Objects
-	public CheckoutPage() {
-		PageFactory.initElements(driver, this);
+	public static void enterContactDetails(String fName, String lName, String pCode) {
+		firstName.sendKeys(fName);
+		lastName.sendKeys(lName);
+		postCode.sendKeys(pCode);
 	}
 
-	public void enterContactDetails() {
-		firstName.sendKeys(prop.getProperty("firstname"));
-		lastName.sendKeys(prop.getProperty("lastname"));
-		postCode.sendKeys(prop.getProperty("postcode"));
-	}
-
-	public void clickContinueBtn() {
+	public static void clickContinueBtn() {
 		continueBtn.click();
 	}
 
-	public void clickFinishBtn() {
+	public static void clickFinishBtn() {
 		finishBtn.click();
 	}
 }

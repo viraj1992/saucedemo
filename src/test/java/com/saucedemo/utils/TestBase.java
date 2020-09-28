@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestBase {
-	
+
 	public static WebDriver driver;
 	public static Properties prop;
 
@@ -30,9 +30,8 @@ public class TestBase {
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\src\\test\\java\\com\\saucedemo\\utils\\chromedriver.exe");
+			driver = new ChromeDriver();
 		}
-
-		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
